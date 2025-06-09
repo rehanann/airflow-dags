@@ -8,10 +8,10 @@ default_args = {
     'retries': 1,
 }
 
-dag = DAG(  # ← Assign DAG to variable so Airflow can detect it
+dag = DAG(
     dag_id='deploy_spark_chart_bashoperator',
     default_args=default_args,
-    schedule_interval=None,
+    schedule=None,  # ✅ use `schedule`, not `schedule_interval`
     catchup=False,
     tags=['helm', 'spark'],
 )
@@ -32,5 +32,5 @@ deploy_chart = BashOperator(
         }
       }'
     """,
-    dag=dag,  # ← Ensure task is bound to DAG
+    dag=dag,
 )
