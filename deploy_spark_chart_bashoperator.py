@@ -27,7 +27,7 @@ deploy_chart = BashOperator(
         "release_name": "fixed-spark-chart",
         "chart_name": "spark-chart/spark-chart",
         "namespace": "gdt",
-        "set_values": {
+        "values": {
           "runAsJob": true,
           "driver": {
             "command": "bash",
