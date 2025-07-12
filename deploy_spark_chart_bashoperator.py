@@ -24,14 +24,14 @@ deploy_chart = BashOperator(
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
-        "release_name": "mytest",
+        "release_name": "fixed-spark-chart",
         "chart_name": "spark-chart/spark-chart",
         "namespace": "gdt",
         "set_values": {
           "runAsJob": true,
           "driver": {
             "command": "bash",
-            "args": ["-c", "spark-submit /opt/spark/work-dir/shared/test2.py"]
+            "args": ["-c", "/opt/spark/bin/spark-submit /opt/spark/work-dir/shared/test2.py"]
           }
         }
       }'
