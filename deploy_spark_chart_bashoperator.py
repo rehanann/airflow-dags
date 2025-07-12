@@ -24,7 +24,7 @@ deploy_chart = BashOperator(
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
-        "release_name": "fixed-spark-chart",
+        "release_name": "switch-values-test",
         "chart_name": "spark-chart/spark-chart",
         "namespace": "gdt",
         "values": {
